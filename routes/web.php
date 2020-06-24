@@ -18,10 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('posts', 'PostsController');
-
+Route::get('notificaciones', 'NotificationsController@index')->name('notifications.index');
 Route::get('messages/create', 'MessagesController@create')->name('messages.create');
 Route::post('messages', 'MessagesController@store')->name('messages.store');
 Route::get('messages/{id}', 'MessagesController@show')->name('messages.show');
-Route::get('notificaciones', 'NotificationsController@index')->name('notifications.index');
 Route::patch('notificaciones/{id}', 'NotificationsController@read')->name('notifications.read');
 Route::delete('notificaciones/{id}', 'NotificationsController@destroy')->name('notifications.destroy');
